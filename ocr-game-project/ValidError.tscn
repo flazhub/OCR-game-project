@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://btt8xw4v5poys"]
+
+[node name="ValidError" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+offset_left = 109.0
+offset_top = 111.0
+offset_right = 460.0
+offset_bottom = 186.0
+theme_override_colors/font_color = Color(0.898039, 0, 0, 0.937255)
+text = "username must be less than 10 characters,
+password must  be more than 8 characters
+and must contain a capital letter and number"

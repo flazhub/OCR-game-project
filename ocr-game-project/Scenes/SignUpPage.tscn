@@ -1,0 +1,88 @@
+[gd_scene load_steps=2 format=3 uid="uid://ulr5sv1ksopa"]
+
+[ext_resource type="Script" path="res://Scripts/Sign Up Page.gd" id="1_kd7sc"]
+
+[node name="SignUpPage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kd7sc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UserNameLabel" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.378472
+anchor_top = 0.317901
+anchor_right = 0.452257
+anchor_bottom = 0.353395
+offset_bottom = -1.52588e-05
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Username:"
+metadata/_edit_use_anchors_ = true
+
+[node name="PassWordLabel" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.378472
+anchor_top = 0.452161
+anchor_right = 0.448785
+anchor_bottom = 0.487654
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Password:"
+metadata/_edit_use_anchors_ = true
+
+[node name="UserNameText" type="TextEdit" parent="."]
+layout_mode = 0
+anchor_left = 0.378472
+anchor_top = 0.353395
+anchor_right = 0.618924
+anchor_bottom = 0.421296
+offset_top = -1.52588e-05
+theme_override_colors/background_color = Color(0.423529, 0.607843, 1, 0.929412)
+placeholder_text = "e.g. Billy_Bob49"
+metadata/_edit_use_anchors_ = true
+
+[node name="PassWordText" type="TextEdit" parent="."]
+layout_mode = 0
+anchor_left = 0.378472
+anchor_top = 0.487654
+anchor_right = 0.618924
+anchor_bottom = 0.555556
+offset_bottom = -3.05176e-05
+theme_override_colors/background_color = Color(0.423529, 0.607843, 1, 0.929412)
+placeholder_text = "e.g. password123"
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.378
+anchor_top = 0.597
+anchor_right = 0.619
+anchor_bottom = 0.724
+offset_left = 0.543976
+offset_top = 0.144012
+offset_right = -0.0880127
+offset_bottom = -9.15204
+theme_override_constants/separation = 20
+
+[node name="SignUpButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Sign Up"
+metadata/_edit_use_anchors_ = true
+
+[node name="ReturnButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Return"
+
+[connection signal="pressed" from="VBoxContainer/SignUpButton" to="." method="_on_sign_up_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]

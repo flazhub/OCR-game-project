@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://dif7dc3xwb406"]
+
+[ext_resource type="Script" path="res://Scripts/basic_movement.gd" id="1_j4ycj"]
+[ext_resource type="Texture2D" uid="uid://d1tj2wclrikw5" path="res://Assets/icon.svg" id="2_m1x8w"]
+[ext_resource type="Texture2D" uid="uid://c4xgiseolj4ls" path="res://Assets/car.png" id="2_pkeqf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i0pb5"]
+radius = 74.0
+height = 256.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3iwb4"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_j4ycj")
+metadata/_edit_horizontal_guides_ = [-232.0, 632.0, -123.0, -291.0, -291.0, 573.0, 406.0, -292.0, -265.0, 596.0, -269.0, 596.0, 596.0, 572.0, 598.0, -266.0, -266.0]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 44)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CapsuleShape2D_i0pb5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_3iwb4")
+position = Vector2(8.88178e-16, 44)
+rotation = 1.5708
+scale = Vector2(0.0638966, 0.084304)
+texture = ExtResource("2_pkeqf")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 165.977)
+rotation = 3.14159
+ignore_rotation = false
+zoom = Vector2(0.75, 0.75)
+
+[node name="steeringCentre" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="steeringCentre"]
+position = Vector2(-1.90735e-06, -9.53674e-07)
+scale = Vector2(0.183594, 0.191406)
+texture = ExtResource("2_m1x8w")

@@ -1,0 +1,170 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpslex2ou4hxx"]
+
+[ext_resource type="Script" path="res://Scripts/SignInPage.gd" id="1_1x0sc"]
+
+[sub_resource type="Theme" id="Theme_isbvd"]
+
+[node name="SignInPage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1x0sc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.517
+offset_bottom = -0.0160217
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.310617, 0.310617, 0.310617, 1)
+
+[node name="NewUser" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.388
+anchor_top = 0.552
+anchor_right = 0.595
+anchor_bottom = 0.605
+offset_left = 0.0239868
+offset_top = 0.303955
+offset_right = 0.559937
+offset_bottom = -0.0400085
+grow_horizontal = 2
+grow_vertical = 2
+text = "New User"
+
+[node name="UserNameTxt" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.388
+anchor_top = 0.15
+anchor_right = 0.595
+anchor_bottom = 0.185
+offset_left = 0.0239868
+offset_top = -0.200005
+offset_right = 0.559937
+offset_bottom = 0.119995
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Username:"
+
+[node name="PassWordTxt" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.388
+anchor_top = 0.27
+anchor_right = 0.595
+anchor_bottom = 0.301
+offset_left = 0.0239868
+offset_top = 0.0399933
+offset_right = 0.559937
+offset_bottom = 2.952
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Password:"
+
+[node name="SignIn" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.388
+anchor_top = 0.383
+anchor_right = 0.595
+anchor_bottom = 0.431
+offset_left = 0.0239868
+offset_top = -0.184006
+offset_right = 0.559937
+offset_bottom = -0.287994
+text = "Sign In"
+
+[node name="ForgotPassword" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.422
+anchor_top = 0.446
+anchor_right = 0.545
+anchor_bottom = 0.494
+offset_left = -0.144012
+offset_top = -0.00799561
+offset_right = 0.159973
+offset_bottom = -0.112
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_isbvd")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0.0854914, 0.323126, 1, 1)
+text = "forgot password?"
+
+[node name="PassWordBox" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.388
+anchor_top = 0.301
+anchor_right = 0.595
+anchor_bottom = 0.35
+offset_left = 0.0239868
+offset_top = -0.0480194
+offset_right = 0.559937
+offset_bottom = 0.199982
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/background_color = Color(0.423529, 0.607843, 1, 0.929412)
+placeholder_text = "e.g. jimmybob"
+
+[node name="UserNameBox" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.388
+anchor_top = 0.185
+anchor_right = 0.595
+anchor_bottom = 0.238
+offset_left = 0.0239868
+offset_top = 0.119995
+offset_right = 0.559937
+offset_bottom = -0.223999
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/background_color = Color(0.423529, 0.607843, 1, 0.929412)
+placeholder_text = "e.g. jimmybob"
+
+[node name="userNameError" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.422
+anchor_top = 0.062
+anchor_right = 0.554
+anchor_bottom = 0.097
+offset_left = -0.144012
+offset_top = -0.176003
+offset_right = -0.208008
+offset_bottom = 0.143997
+text = "incorrect username"
+
+[node name="passWordError" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.422
+anchor_top = 0.062
+anchor_right = 0.551
+anchor_bottom = 0.097
+offset_left = -0.144012
+offset_top = -0.176003
+offset_right = -108.752
+offset_bottom = 0.143997
+text = "incorrect password"
+
+[connection signal="pressed" from="NewUser" to="." method="_on_new_user_pressed"]
+[connection signal="pressed" from="SignIn" to="." method="_on_sign_in_pressed"]
+[connection signal="pressed" from="ForgotPassword" to="." method="_on_forgot_password_pressed"]

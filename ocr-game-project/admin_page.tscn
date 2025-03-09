@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dorrs0l8ltcba"]
+
+[node name="AdminPage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.421875
+anchor_top = 0.118827
+anchor_right = 0.546875
+anchor_bottom = 0.17284
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Admin Page"
+metadata/_edit_use_anchors_ = true
+
+[node name="UserList" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.391493
+anchor_top = 0.300926
+anchor_right = 0.622396
+anchor_bottom = 0.70216
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.361979
+anchor_top = 0.219136
+anchor_right = 0.638021
+anchor_bottom = 0.273148
+offset_bottom = 1.52588e-05
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Approve password change"
+metadata/_edit_use_anchors_ = true
