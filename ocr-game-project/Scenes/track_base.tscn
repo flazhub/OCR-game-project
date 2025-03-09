@@ -1,0 +1,144 @@
+[gd_scene load_steps=7 format=3 uid="uid://baqa2tymawgss"]
+
+[ext_resource type="Script" path="res://track_base.gd" id="1_aihnd"]
+[ext_resource type="PackedScene" uid="uid://dif7dc3xwb406" path="res://Scenes/Player.tscn" id="1_bhl6u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_noyhl"]
+size = Vector2(1545, 505)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24r3q"]
+size = Vector2(88, 286.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_foweg"]
+size = Vector2(83, 115)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mucx4"]
+size = Vector2(60, 22.214)
+
+[node name="TrackBase" type="Node2D"]
+script = ExtResource("1_aihnd")
+
+[node name="TrackVisuals" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="TrackVisuals"]
+offset_left = -941.0
+offset_top = -475.0
+offset_right = 1602.0
+offset_bottom = 842.0
+color = Color(0.462291, 0.462291, 0.462291, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="TrackVisuals"]
+offset_left = 1596.0
+offset_top = -782.0
+offset_right = 1934.0
+offset_bottom = 1157.0
+color = Color(0.0295066, 0.0295066, 0.0295065, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="TrackVisuals"]
+offset_left = -1320.0
+offset_top = -783.0
+offset_right = 1613.0
+offset_bottom = -474.0
+color = Color(0.0295066, 0.0295066, 0.0295065, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="TrackVisuals"]
+offset_left = -1323.0
+offset_top = -495.0
+offset_right = -942.0
+offset_bottom = 1163.0
+color = Color(0.0295066, 0.0295066, 0.0295065, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="TrackVisuals"]
+offset_left = -957.0
+offset_top = 838.0
+offset_right = 1595.0
+offset_bottom = 1163.0
+color = Color(0.0295066, 0.0295066, 0.0295065, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="TrackVisuals"]
+offset_left = 143.0
+offset_top = 722.0
+offset_right = 225.0
+offset_bottom = 954.0
+color = Color(0.0295066, 0.0295066, 0.0295065, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="TrackVisuals"]
+offset_left = -455.0
+offset_top = -87.0
+offset_right = 1091.0
+offset_bottom = 417.0
+color = Color(0.0295066, 0.0295066, 0.0295065, 1)
+
+[node name="ColorRect8" type="ColorRect" parent="TrackVisuals"]
+offset_left = 413.0
+offset_top = 204.0
+offset_right = 497.0
+offset_bottom = 708.0
+color = Color(0.0295066, 0.0295066, 0.0295065, 1)
+
+[node name="ColorRect9" type="ColorRect" parent="TrackVisuals"]
+offset_left = 340.0
+offset_top = -474.0
+offset_right = 400.0
+offset_bottom = -86.0
+
+[node name="TrackWalls" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrackWalls"]
+position = Vector2(322, 168)
+shape = SubResource("RectangleShape2D_noyhl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TrackWalls"]
+position = Vector2(455, 564.25)
+shape = SubResource("RectangleShape2D_24r3q")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TrackWalls"]
+position = Vector2(184.5, 779.5)
+shape = SubResource("RectangleShape2D_foweg")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TrackWalls"]
+polygon = PackedVector2Array(1594, -474, 1596, 839, -941, 838, -942, -474, 1591, -474, 1600, -814, -1509, -908, -1518, 1532, 2392, 1598, 2149, -937, 1604, -814)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_bhl6u")]
+position = Vector2(546, -321)
+rotation = 1.5708
+
+[node name="Control" type="Control" parent="CharacterBody2D"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="stopWatch" type="Label" parent="CharacterBody2D/Control"]
+layout_mode = 0
+offset_left = 678.0
+offset_top = 520.0
+offset_right = 728.0
+offset_bottom = 579.0
+rotation = -3.14159
+
+[node name="startLine" type="Area2D" parent="."]
+position = Vector2(362, -227)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="startLine"]
+position = Vector2(8, -47)
+scale = Vector2(1, 18.88)
+shape = SubResource("RectangleShape2D_mucx4")
+
+[node name="checkPoint1" type="Area2D" parent="."]
+position = Vector2(-427, 658)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="checkPoint1"]
+position = Vector2(8, -29.7)
+scale = Vector2(1, 18.88)
+shape = SubResource("RectangleShape2D_mucx4")
+
+[node name="checkPoint2" type="Area2D" parent="."]
+position = Vector2(362, -227)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="checkPoint2"]
+position = Vector2(698, 858)
+scale = Vector2(1, 18.88)
+shape = SubResource("RectangleShape2D_mucx4")
+
+[connection signal="body_entered" from="startLine" to="." method="_on_start_line_body_entered"]
+[connection signal="body_entered" from="checkPoint1" to="." method="_on_check_point_1_body_entered"]
+[connection signal="body_entered" from="checkPoint2" to="." method="_on_check_point_2_body_entered"]

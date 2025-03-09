@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://6c2hjom0bnb8"]
+
+[ext_resource type="Texture2D" uid="uid://d1tj2wclrikw5" path="res://Assets/icon.svg" id="1_7r11q"]
+[ext_resource type="PackedScene" uid="uid://dif7dc3xwb406" path="res://Scenes/Player.tscn" id="2_b1jwc"]
+[ext_resource type="PackedScene" uid="uid://dgxbfo7jfa6qk" path="res://Test/obstacle.tscn" id="3_i81ml"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1631.25, -1480)
+scale = Vector2(38.4805, 33.2344)
+texture = ExtResource("1_7r11q")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_b1jwc")]
+position = Vector2(-881, -863)
+metadata/_edit_horizontal_guides_ = [84.0, 0.0, -232.0, 632.0, 40.0, -123.0, -291.0, -291.0, 573.0, 406.0, -292.0, 64.0, 64.0]
+
+[node name="obstacle" parent="." instance=ExtResource("3_i81ml")]
+position = Vector2(-970, -1309)

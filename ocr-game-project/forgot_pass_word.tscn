@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://cebi4x13rfimv"]
+
+[ext_resource type="Script" path="res://ForgotPassWord.gd" id="1_b63eg"]
+
+[node name="ForgotPassWord" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b63eg")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 543.0
+offset_top = 426.0
+offset_right = 676.0
+offset_bottom = 457.0
+text = "Request Change"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.417
+anchor_top = 0.369
+anchor_right = 0.631
+anchor_bottom = 0.435
+offset_left = -0.384033
+offset_top = -0.112015
+offset_right = 0.0879517
+offset_bottom = 0.119965
+placeholder_text = "username"
+
+[node name="TextEdit2" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.417
+anchor_top = 0.369
+anchor_right = 0.631
+anchor_bottom = 0.435
+offset_left = -0.384033
+offset_top = 67.888
+offset_right = 0.0879517
+offset_bottom = 68.12
+placeholder_text = "password"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
